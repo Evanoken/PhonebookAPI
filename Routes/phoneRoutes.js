@@ -1,4 +1,4 @@
-import { getContacts, getContact, createContact, updateContact} from "../Controller/phoneController.js"
+import { getContacts, getContact, createContact, updateContact, deleteContact} from "../Controller/phoneController.js"
 
 const phoneRoutes = (app) => {
 
@@ -10,7 +10,7 @@ const phoneRoutes = (app) => {
     app.route('/contacts/:id')
         .get(getContact)
         .put(updateContact)
-        .delete()
+        .delete(deleteContact)
 }
 
 export default phoneRoutes;
