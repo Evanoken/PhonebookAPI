@@ -57,7 +57,7 @@ This project uses SQL Server as the database. Before running the application, ma
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+Its free licence
 
 ## Contributing
 
