@@ -77,20 +77,6 @@ export const updateContact = async (req, res) => {
     }
 }
 
-//  //Deleting a Contact
-//  export const deleteContact = async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         await sql.connect(config.sql);
-//         await sql.query(`select * from contacts where id = @id`);
-//         // query("select * from contacts where id = @id");
-//         res.status(200).json({ message: 'Contact deleted successfully' });
-//     } catch (error) {
-//         res.status(500).json({ error: 'An error occurred while deleting the Contact' });
-//     } finally {
-//         sql.close();
-//     }
-// };
 
 export const deleteContact = async (req, res) => {
     let connection;
