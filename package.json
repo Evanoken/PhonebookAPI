@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "engines": {
-    "node": ">=18.16.0"
+    "node": ">=18.14.0"
   },
   "scripts": {
-    "start": " server.js",
+    "start": "node server.js",
     "dev":"nodemon server.js"
   },
   "author": "judy",
