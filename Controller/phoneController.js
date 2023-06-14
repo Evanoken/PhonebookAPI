@@ -1,7 +1,7 @@
 import sql from 'mssql';
 import config from '../Db/config.js';
 
-// Getting all ToDos
+// Getting all Contacts
 export const getContacts = async (req, res) => {
     try {
         let pool = await sql.connect(config.sql);
@@ -15,7 +15,7 @@ export const getContacts = async (req, res) => {
     }
 }
 
-// Getting one ToDo
+// Getting one Contact
 export const getContact = async (req, res) => {
     try {
         const { id } = req.params;
@@ -77,16 +77,24 @@ export const updateContact = async (req, res) => {
     }
 }
 
-// Deleting a ToDo
-// export const deleteTodo = async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         await sql.connect(config.sql);
-//         await sql.query`DELETE FROM list WHERE id = ${id}`;
-//         res.status(200).json({ message: 'Todo deleted successfully' });
-//     } catch (error) {
-//         res.status(500).json({ error: 'An error occurred while deleting the todo' });
-//     } finally {
-//         sql.close();
-//     }
-// }
+
+export const deleteContact = async (req, res) => {
+    let connection;
+    try {
+      const { id } = req.params;
+  
+      connection = await sql.connect(config.sql);
+      const result = await connection.request().query(`
+        DELETE FROM Contacts
+        WHERE id  ${id};
+      `);
+  
+      res.send(result);
+    } catch (error) {
+      res.status(500).json({ error: 'An error occurred while deleting the contact' });
+    } finally {
+      if (connection) {
+        connection.close();
+      }
+    }
+  };
