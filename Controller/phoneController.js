@@ -7,13 +7,14 @@ export const getContacts = async (req, res) => {
         let pool = await sql.connect(config.sql);
         const result = await pool.request().query("SELECT * FROM contacts");
         res.status(200).json(result.recordset);
-
     } catch (error) {
-        res.status(201).json({ error: 'an error occurred while retrieving contacts' });
+        console.error(error); // Log the error for debugging purposes
+        res.status(500).json({ error: 'An error occurred while retrieving contacts' });
     } finally {
-        sql.close();
+        sql.close(); // Close the connection pool to release resources
     }
 }
+
 
 // Getting one Contact
 export const getContact = async (req, res) => {
