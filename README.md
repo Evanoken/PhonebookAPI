@@ -68,4 +68,6 @@ Its free licence
 ## Contributing
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
+![WhiskeyEiSuoiAmiciCoccoleSonoreGIF](https://github.com/Evanoken/PhonebookAPI/assets/95754975/da6b9803-3c7b-4f9a-bf10-5ba7d8ff46f6)
+
 
