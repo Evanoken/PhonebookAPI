@@ -5,7 +5,7 @@ import config from '../Db/config.js';
 export const getContacts = async (req, res) => {
     try {
         let pool = await sql.connect(config.sql);
-        const result = await pool.request().query("SELECT * FROM contacts");
+        const result = await pool.request().query("SELECT c.full_name, c.mobile_no, c.work_no, c.email, c.address, g.group_name FROM contacts c JOIN groups g ON c.group_id = g.group_id;");
         res.status(200).json(result.recordset);
     } catch (error) {
         console.error(error); // Log the error for debugging purposes
@@ -15,6 +15,41 @@ export const getContacts = async (req, res) => {
     }
 }
 
+// Getting all Groups
+export const getGroups = async (req, res) => {
+  try {
+      let pool = await sql.connect(config.sql);
+      const result = await pool.request().query("SELECT * FROM groups;");
+      res.status(200).json(result.recordset);
+  } catch (error) {
+      console.error(error); // Log the error for debugging purposes
+      res.status(500).json({ error: 'An error occurred while retrieving Groups' });
+  } finally {
+      sql.close(); // Close the connection pool to release resources
+  }
+}
+
+// Getting contacts using a Group name
+export const getContactsByGroup = async (req, res) => {
+  try {
+    const { group_name } = req.params;
+    const pool = await sql.connect(config.sql);
+    const query = "SELECT c.full_name, c.mobile_no, c.email, g.group_name FROM contacts c JOIN groups g ON c.group_id = g.group_id;";
+    const result = await pool.request()
+        .input("group_name", sql.VarChar, group_name)
+        .query(query);
+    if (!result.recordset[0]) {
+        res.status(404).json({ message: 'GroupName does not exist' });
+    } else {
+        res.status(200).json(result.recordset);
+    }
+} catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'An error occurred while retrieving the Group' });
+} finally {
+    sql.close();
+}
+}
 
 // Getting one Contact
 export const getContact = async (req, res) => {
