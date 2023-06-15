@@ -11,7 +11,6 @@ This is a phonebook API that allows users to manage contact details of individua
 2. Navigate to the project directory: `cd phonebook-api`
 3. Install dependencies: `npm install`
 <br>
-![InstalledKramerGIF](https://github.com/Evanoken/PhonebookAPI/assets/95754975/932e868a-e68a-4cf0-9598-9cb94c288f12)
 <br>
 ## Database Setup
 
@@ -26,14 +25,8 @@ This project uses SQL Server as the database. Before running the application, ma
 1. Rename the `.env.example` file to `.env`.
 2. Open the `.env` file and update the database connection details with your SQL Server configuration.
 
-
-## Database Migration
-
-1. Run the database migration scripts to create the necessary tables in the database.
-
-
 ## Usage
-
+### When running in localhost
 1. Start the server: `npm start`
 2. Access the API at: `http://localhost:8081`
 
