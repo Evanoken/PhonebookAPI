@@ -48,8 +48,7 @@ This project uses SQL Server as the database. Before running the application, ma
 
 ## Authors
 <br>
-![GroupProjectsBeLikeGIF](https://github.com/Evanoken/PhonebookAPI/assets/95754975/5090ebd0-3b30-444d-b5e5-618a1d502692)
-
+![GroupChatCnmrlmGIF](https://github.com/Evanoken/PhonebookAPI/assets/95754975/b9c343f5-c99b-4be5-8b72-025a038c6e7d)
 <br>
 - Lewis Muthaura
 - Evans Ngugi
