@@ -1,19 +1,25 @@
 # Phonebook API
 
 This is a phonebook API that allows users to manage contact details of individuals, including their full name, mobile number, work number, email, home address, and group ID. Users can perform CRUD operations (Create, Read, Update, Delete) on the contacts and assign them to specific groups.
+<br>
+![DancingByTheFireKiGIF](https://github.com/Evanoken/PhonebookAPI/assets/95754975/9bd19b21-9223-4168-ac49-7320e349a432)
+<br>
 
 ## Installation
 
 1. Clone the repository: `git clone <repository-url>`
 2. Navigate to the project directory: `cd phonebook-api`
 3. Install dependencies: `npm install`
-
+<br>
+![InstalledKramerGIF](https://github.com/Evanoken/PhonebookAPI/assets/95754975/932e868a-e68a-4cf0-9598-9cb94c288f12)
+<br>
 ## Database Setup
 
 This project uses SQL Server as the database. Before running the application, make sure you have SQL Server installed and create a new database for the phonebook API.
 
 1. Open SQL Server Management Studio (SSMS) and connect to your SQL Server instance.
 2. Create a new database: `CREATE DATABASE PhonebookDB;`
+<br>
 
 ## Configuration
 
