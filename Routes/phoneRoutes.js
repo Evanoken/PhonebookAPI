@@ -4,7 +4,9 @@ import {
     getContact,
     createContact,
     updateContact,
-    deleteContact
+    deleteContact,
+    getGroups,
+    getContactsByGroup
   } from "../Controller/phoneController.js";
   
   const phoneRoutes = (app) => {
@@ -19,7 +21,15 @@ import {
     app.route('/contacts/:id')
       .get(getContact) // Handler function to retrieve a specific contact by ID
       .put(updateContact) // Handler function to update a specific contact
-      .delete(deleteContact); // Handler function to delete a specific contact
+      .delete(deleteContact);
+      
+    // GET request for '/contacts/group/:group_name route
+    app.route('/groups')
+      .get(getGroups); // Handler function to retrieve all contacts in a specific group
+
+    // Routes for handling groups
+    app.route('/groups/:group_name')
+      .get(getContactsByGroup); // Handler function to retrieve all contacts in a specific group
   };
   
   // Exporting the phoneRoutes function as the default export of the module
