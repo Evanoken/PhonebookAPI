@@ -12,6 +12,7 @@ import { register, login, loginRequired } from "../Controller/userController.js"
   
     // GET, PUT, and DELETE requests for '/contacts/:id' route
     app.route('/contacts/:id')
+    
       .get(loginRequired, getContact) // Handler function to retrieve a specific contact by ID
       .put(loginRequired, updateContact) // Handler function to update a specific contact
       .delete(loginRequired, deleteContact);
